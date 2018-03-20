@@ -14,9 +14,9 @@ var
   result: boolean;
 
 begin
-  result := TProcess.New('C:\Windows\System32\notepad.exe')
+  result := TProcess.New('notepad.exe')
     .CommandLineArgs()
-      .Arg('E:\error.txt')
+      .Arg('input.txt')
       .Build()
     .Flags(NORMAL_PRIORITY_CLASS)
     .StartInfo()

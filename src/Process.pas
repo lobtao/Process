@@ -300,8 +300,8 @@ var
   processInfo: TProcessInformation;
 begin
   Result := CreateProcess(
-    ToPWideChar(fAppName),
-    ToPWideChar(CommandLineArgsToString()),
+    nil,
+    ToPWideCharOrNull(fAppName + ' ' + CommandLineArgsToString()),
     nil{ProcessAttributes},
     nil{ThreadAtrributes},
     fInheritHandles,
