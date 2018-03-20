@@ -9,6 +9,7 @@ uses
 
 type
   IProcess = interface
+  ['{6F9391CA-3C18-40CE-BA91-BEDA3B405F45}']
     function GetProcessHandle(): THandle;
     function GetThreadHandle(): THandle;
     function GetProcessId(): Cardinal;
@@ -26,6 +27,7 @@ type
   IProcessBuilder = interface;
 
   IStartUpInfoBuilder = interface
+  ['{296CD1A4-05E6-4B27-BD48-7DC29865AD3C}']
     function Flags(flags: Cardinal): IStartUpInfoBuilder;
     function ShowWindow(showWindow: Word): IStartUpInfoBuilder;
 
@@ -33,11 +35,13 @@ type
   end;
 
   ICommandLineArgsBuilder = interface
+  ['{A777E7A0-818C-4AD8-A728-13A41778D57B}']
     function Arg(name: string; value: string = ''): ICommandLineArgsBuilder;
     function Build(): IProcessBuilder;
   end;
 
   IProcessBuilder = interface
+  ['{B3983F67-486B-41FB-9761-452C3CB763CF}']
     function Name(name: string): IProcessBuilder;
     function CommandLineArgs(): ICommandLineArgsBuilder;
     function InheritHandles(inheritHandles: boolean): IProcessBuilder;
